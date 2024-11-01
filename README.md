@@ -1,3 +1,3 @@
-# Template for Kotlin jvm projects
+# Shared Kernel
 
-This template is a starting point for a Kotlin JVM project for Postion Pal organition.
+This repo contains common features useful to the various microservices of the PositionPal application.

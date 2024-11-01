@@ -3,10 +3,10 @@ plugins {
     id("com.gradle.develocity") version "3.18.1"
 }
 
-rootProject.name = "kotlin-template"
+rootProject.name = "shared-kernel"
 
 include(
-    "core",
+    "serialization",
 )
 
 develocity {

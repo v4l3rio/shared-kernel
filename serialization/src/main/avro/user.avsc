@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "User",
+  "namespace": "com.positionpal",
+  "fields": [
+    {"name": "id", "type": "string"},
+    {"name": "name", "type": "string"},
+    {"name": "surname", "type": "string"},
+    {"name": "email", "type": "string"},
+    {"name": "password", "type": "string"},
+    {"name": "role", "type": "string"}
+  ]
+}

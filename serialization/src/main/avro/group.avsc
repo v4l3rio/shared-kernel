@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "Group",
+  "namespace": "com.positionpal",
+  "fields": [
+    {"name": "id", "type": "string"},
+    {"name": "name", "type": "string"},
+    {
+      "name": "members",
+      "type": {
+        "type": "array",
+        "items": "User"
+      }
+    },
+    {"name": "createdBy", "type": "User"}
+  ]
+}
