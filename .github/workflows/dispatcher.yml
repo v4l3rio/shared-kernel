@@ -1,0 +1,41 @@
+# This workflow serves as the dispatcher for the CI/CD pipeline, acting as a filter to ensure that the
+# pipeline runs only when necessary. It should be placed in a separate file to prevent triggering the
+# CI/CD workflow when conditions are not met, as this could lead to incorrect behavior for bots that
+# depends on the successful execution of specific jobs.
+name: CI/CD
+
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+      - 'CHANGELOG.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - '.mergify.yml'
+      - 'renovate.json'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  print-github-context:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: |
+          echo 'github.event_name = ${{ github.event_name }}'
+          echo 'github.event.pull_request.head.repo.full_name = ${{ github.event.pull_request.head.repo.full_name }}'
+          echo 'github.repository = ${{ github.repository }}'
+          echo 'github.ref_name = ${{ github.ref_name }}'
+
+  dispatcher:
+    # Prevents running the workflow twice on PR made by a branch of the same repository
+    runs-on: ubuntu-24.04
+    if: >-
+      github.event_name != 'pull_request'
+      || github.event.pull_request.head.repo.full_name != github.repository
+    steps:
+      - run: 'true'
+
+  ci-cd:
+    needs: dispatcher
+    uses: ./.github/workflows/ci.yml
+    secrets: inherit
