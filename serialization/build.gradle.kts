@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("com.github.davidmc24.gradle.plugin.avro") version "1.9.1"
+    alias(libs.plugins.avro)
 }
 
 group = "io.github.positionpal"
@@ -11,9 +11,11 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("org.apache.avro:avro:1.12.0")
+    with(libs) {
+        testImplementation(platform(bom.junit))
+        testImplementation(junit.jupiter)
+        implementation(avro)
+    }
 }
 
 tasks.test {
