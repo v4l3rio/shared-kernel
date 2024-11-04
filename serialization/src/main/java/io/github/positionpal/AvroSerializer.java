@@ -1,4 +1,5 @@
 package io.github.positionpal;
+
 import com.positionpal.Group;
 import com.positionpal.User;
 import org.apache.avro.Schema;
@@ -13,12 +14,21 @@ import java.io.ByteArrayOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
+/**
+ * A serializer class for serializing and deserializing User and Group objects using Avro.
+ */
 public class AvroSerializer {
 
     private static final Schema USER_SCHEMA = User.getClassSchema();
     private static final Schema GROUP_SCHEMA = Group.getClassSchema();
 
-    // Serialization
+    /**
+     * Serializes a User object into a byte array.
+     *
+     * @param user the User object to serialize
+     * @return a byte array representing the serialized User
+     * @throws IOException if an I/O error occurs during serialization
+     */
     public byte[] serializeUser(User user) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         Encoder encoder = EncoderFactory.get().binaryEncoder(outputStream, null);
@@ -28,6 +38,13 @@ public class AvroSerializer {
         return outputStream.toByteArray();
     }
 
+    /**
+     * Serializes a Group object into a byte array.
+     *
+     * @param group the Group object to serialize
+     * @return a byte array representing the serialized Group
+     * @throws IOException if an I/O error occurs during serialization
+     */
     public byte[] serializeGroup(Group group) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         Encoder encoder = EncoderFactory.get().binaryEncoder(outputStream, null);
@@ -37,7 +54,13 @@ public class AvroSerializer {
         return outputStream.toByteArray();
     }
 
-    // Deserialization
+    /**
+     * Deserializes a byte array into a User object.
+     *
+     * @param data the byte array to deserialize
+     * @return the deserialized User object
+     * @throws IOException if an I/O error occurs during deserialization
+     */
     public User deserializeUser(byte[] data) throws IOException {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(data);
         Decoder decoder = DecoderFactory.get().binaryDecoder(inputStream, null);
@@ -45,6 +68,13 @@ public class AvroSerializer {
         return reader.read(null, decoder);
     }
 
+    /**
+     * Deserializes a byte array into a Group object.
+     *
+     * @param data the byte array to deserialize
+     * @return the deserialized Group object
+     * @throws IOException if an I/O error occurs during deserialization
+     */
     public Group deserializeGroup(byte[] data) throws IOException {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(data);
         Decoder decoder = DecoderFactory.get().binaryDecoder(inputStream, null);
