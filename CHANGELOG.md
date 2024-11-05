@@ -1,3 +1,9 @@
+## [0.2.1](https://github.com/position-pal/shared-kernel/compare/0.2.0...0.2.1) (2024-11-05)
+
+### Bug Fixes
+
+* publish command ([7eb5b75](https://github.com/position-pal/shared-kernel/commit/7eb5b758d33a34aa280ca60a65a68678f74175ce))
+
 ## [0.2.0](https://github.com/position-pal/shared-kernel/compare/0.1.1...0.2.0) (2024-11-05)
 
 ### Features
