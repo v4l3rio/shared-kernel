@@ -17,7 +17,7 @@ import java.io.IOException;
 /**
  * A serializer class for serializing and deserializing User and Group objects using Avro.
  */
-public class AvroSerializer {
+public class AvroSerializer implements Serializer {
 
     private static final Schema USER_SCHEMA = User.getClassSchema();
     private static final Schema GROUP_SCHEMA = Group.getClassSchema();
