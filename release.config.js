@@ -1,7 +1,7 @@
 const config = require('semantic-release-preconfigured-conventional-commits')
 
 const publishCommands = `
-./gradlew publishAllPublicationsToGitHubRepository || exit 1
+./gradlew publishJavaOSSRHPublicationToGitHubRepository || exit 1
 `
 const releaseBranches = ["main"]
 
