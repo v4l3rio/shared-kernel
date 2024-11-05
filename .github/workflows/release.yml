@@ -5,7 +5,17 @@ on:
   workflow_dispatch:
 
 jobs:
+  dry-deployment:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Upload, Close and Drop
+        run: ./gradlew uploadJavaOSSRHToMavenCentralNexus close drop
+        env:
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+
   release-and-delivery:
+    needs: dry-deployment
     permissions: # Not specified scopes are set to `none`!
       packages: write
       contents: write
@@ -36,3 +46,5 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.SIGNING_KEY }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.SIGNING_PASSWORD }}
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
