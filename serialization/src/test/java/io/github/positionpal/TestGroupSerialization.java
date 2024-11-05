@@ -1,7 +1,8 @@
+package io.github.positionpal;
+
 import com.positionpal.Group;
 import com.positionpal.User;
 import io.github.positionpal.AvroSerializer;
-import io.kotest.core.spec.style.AnnotationSpec;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

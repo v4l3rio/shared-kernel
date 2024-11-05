@@ -1,5 +1,6 @@
+package io.github.positionpal;
+
 import com.positionpal.User;
-import io.github.positionpal.AvroSerializer;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
