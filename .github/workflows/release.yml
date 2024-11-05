@@ -18,6 +18,8 @@ jobs:
       - name: Upload, Close and Drop
         run: ./gradlew uploadJavaOSSRHToMavenCentralNexus close drop
         env:
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.SIGNING_KEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.SIGNING_PASSWORD }}
           MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
 
