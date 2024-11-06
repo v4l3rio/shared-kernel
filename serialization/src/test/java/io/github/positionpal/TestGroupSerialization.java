@@ -18,7 +18,6 @@ public class TestGroupSerialization {
         User user = User.newBuilder()
                 .setId("random")
                 .setEmail("random@email.it")
-                .setPassword("password")
                 .setName("Test")
                 .setRole("user")
                 .setSurname("User")

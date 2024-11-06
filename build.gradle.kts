@@ -54,7 +54,7 @@ publishOnCentral {
                         }
                         developer {
                             name = "Giovanni Antonioni"
-                            email = ""
+                            email = "antonioni.giovanni9@gmail.com"
                         }
                     }
                 }

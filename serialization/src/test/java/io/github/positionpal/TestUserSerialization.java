@@ -14,7 +14,6 @@ public class TestUserSerialization {
         User toSerialize = User.newBuilder()
                 .setId("random")
                 .setEmail("random@email.it")
-                .setPassword("password")
                 .setName("Test")
                 .setRole("user")
                 .setSurname("User")
