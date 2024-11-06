@@ -1,8 +1,7 @@
 const config = require('semantic-release-preconfigured-conventional-commits')
 
 const publishCommands = `
-./gradlew uploadJavaOSSRHToMavenCentralNexus releaseStagingRepositoryOnMavenCentral || exit 1
-./gradlew publishJavaOSSRHPublicationToGitHubRepository || exit 2
+./gradlew publishJavaOSSRHPublicationToGitHubRepository || exit 1
 `
 const releaseBranches = ["main"]
 
