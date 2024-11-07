@@ -1,1 +1,1 @@
-sourceset_dependencies = '{":serialization:dokkaHtmlPartial/main":[]}'
+sourceset_dependencies = '{":kernel-presentation:dokkaHtmlPartial/main":[]}'

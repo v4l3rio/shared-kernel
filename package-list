@@ -1,5 +1,5 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 
-module:serialization
+module:kernel-presentation
 io.github.positionpal
