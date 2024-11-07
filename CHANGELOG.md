@@ -1,3 +1,17 @@
+## [0.3.1](https://github.com/position-pal/shared-kernel/compare/0.3.0...0.3.1) (2024-11-07)
+
+### Dependency updates
+
+* **deps:** update plugin kotlin-qa to v0.69.0 ([1dd951e](https://github.com/position-pal/shared-kernel/commit/1dd951ea5a97b6e54cfd4ec0857fe0c5fa89cf18))
+
+### Bug Fixes
+
+* apply publication plugin on all submodules and rename package name ([c59d6a8](https://github.com/position-pal/shared-kernel/commit/c59d6a8f25634a301b54df9b1fb9d98faad6335c))
+
+### General maintenance
+
+* add author email and remove password from user ([e37dc00](https://github.com/position-pal/shared-kernel/commit/e37dc0015c7220eb777c79e84fc58f9792838a96))
+
 ## [0.3.0](https://github.com/position-pal/shared-kernel/compare/0.2.1...0.3.0) (2024-11-06)
 
 ### Features
