@@ -6,7 +6,7 @@ plugins {
 rootProject.name = "shared-kernel"
 
 include(
-    "serialization",
+    "kernel-presentation",
 )
 
 develocity {

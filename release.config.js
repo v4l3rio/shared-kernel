@@ -1,12 +1,10 @@
-const config = require('semantic-release-preconfigured-conventional-commits')
-
 const publishCommands = `
-./gradlew publishJavaOSSRHPublicationToGitHubRepository || exit 1
+./gradlew publishKotlinOSSRHPublicationToGithubRepository || exit 1
+echo 'Publishing completed successfully'
 `
 const releaseBranches = ["main"]
-
+const config = require('semantic-release-preconfigured-conventional-commits')
 config.branches = releaseBranches
-
 config.plugins.push(
     // Custom release commands
     ["@semantic-release/exec", {
@@ -15,5 +13,4 @@ config.plugins.push(
     "@semantic-release/github",
     "@semantic-release/git",
 )
-
 module.exports = config
