@@ -3,7 +3,7 @@
   "name": "RemovedMemberToGroup",
   "namespace": "com.positionpal",
   "fields": [
-    {"name": "id", "type": "string"},
+    {"name": "groupId", "type": "string"},
     {"name":  "removedMember", "type": "User"}
   ]
 }
