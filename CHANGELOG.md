@@ -1,3 +1,17 @@
+## [0.4.0](https://github.com/position-pal/shared-kernel/compare/0.3.1...0.4.0) (2024-11-09)
+
+### Features
+
+* groups event ([0facbda](https://github.com/position-pal/shared-kernel/commit/0facbdafc680f42abcbd9919ec10763e43e57228))
+
+### Bug Fixes
+
+* removed class from deserialization ([6630d8a](https://github.com/position-pal/shared-kernel/commit/6630d8ac6439b01c98e9336014590cc943b0da54))
+
+### Tests
+
+* added group events tests ([834b137](https://github.com/position-pal/shared-kernel/commit/834b137733b84038dc83cba362ecaab49c6acac9))
+
 ## [0.3.1](https://github.com/position-pal/shared-kernel/compare/0.3.0...0.3.1) (2024-11-07)
 
 ### Dependency updates
