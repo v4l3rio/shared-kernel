@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "GroupCreated",
+  "namespace": "com.positionpal",
+  "fields": [
+    {"name": "id", "type": "string"},
+    {"name": "createdBy", "type": "User"}
+  ]
+}

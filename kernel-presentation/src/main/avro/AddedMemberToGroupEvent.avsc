@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "AddedMemberToGroup",
+  "namespace": "com.positionpal",
+  "fields": [
+    {"name": "id", "type": "string"},
+    {"name":  "addedMember", "type": "User"}
+  ]
+}
