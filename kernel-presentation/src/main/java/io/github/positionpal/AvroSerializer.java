@@ -46,11 +46,10 @@ public class AvroSerializer implements EventSerializer {
      *
      * @param data the byte array to deserialize
      * @param schema the schema of the Avro object
-     * @param clazz the class of the Avro object
      * @return the deserialized Avro object
      * @throws IOException if an I/O error occurs during deserialization
      */
-    private <T> T deserialize(byte[] data, Schema schema, Class<T> clazz) throws IOException {
+    private <T> T deserialize(byte[] data, Schema schema) throws IOException {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(data);
         Decoder decoder = DecoderFactory.get().binaryDecoder(inputStream, null);
         SpecificDatumReader<T> reader = new SpecificDatumReader<>(schema);
@@ -78,7 +77,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public User deserializeUser(byte[] data) throws IOException {
-        return deserialize(data, USER_SCHEMA, User.class);
+        return deserialize(data, USER_SCHEMA);
     }
 
     /**
@@ -102,7 +101,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public AddedMemberToGroup deserializeAddedMemberToGroup(byte[] data) throws IOException {
-        return deserialize(data, ADD_MEMBER_EVENT, AddedMemberToGroup.class);
+        return deserialize(data, ADD_MEMBER_EVENT);
     }
 
     /**
@@ -126,7 +125,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public RemovedMemberToGroup deserializeRemovedMemberToGroup(byte[] data) throws IOException {
-        return deserialize(data, REMOVE_MEMBER_EVENT, RemovedMemberToGroup.class);
+        return deserialize(data, REMOVE_MEMBER_EVENT);
     }
 
     /**
@@ -150,7 +149,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public GroupCreated deserializeGroupCreated(byte[] data) throws IOException {
-        return deserialize(data, GROUP_CREATED_EVENT, GroupCreated.class);
+        return deserialize(data, GROUP_CREATED_EVENT);
     }
 
     /**
@@ -174,6 +173,6 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public GroupDeleted deserializeGroupDeleted(byte[] data) throws IOException {
-        return deserialize(data, GROUP_DELETED_EVENT, GroupDeleted.class);
+        return deserialize(data, GROUP_DELETED_EVENT);
     }
 }
