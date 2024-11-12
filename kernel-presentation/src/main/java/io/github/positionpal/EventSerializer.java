@@ -1,6 +1,10 @@
 package io.github.positionpal;
 
-import com.positionpal.*;
+import com.positionpal.GroupCreated;
+import com.positionpal.GroupDeleted;
+import com.positionpal.User;
+import com.positionpal.AddedMemberToGroup;
+import com.positionpal.RemovedMemberToGroup;
 
 import java.io.IOException;
 

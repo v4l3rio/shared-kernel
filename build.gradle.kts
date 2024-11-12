@@ -1,8 +1,10 @@
+import com.github.spotbugs.snom.SpotBugsTask
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.java.qa)
     alias(libs.plugins.kotlin.qa)
     alias(libs.plugins.kotlin.dokka)
     alias(libs.plugins.git.semantic.versioning)
@@ -35,6 +37,7 @@ subprojects {
         apply(plugin = kotlin.dokka.get().pluginId)
         apply(plugin = publish.get().pluginId)
         apply(plugin = git.semantic.versioning.get().pluginId)
+        apply(plugin = java.qa.get().pluginId)
     }
 
     with(rootProject.libs) {
@@ -57,6 +60,29 @@ subprojects {
             exceptionFormat = TestExceptionFormat.FULL
         }
         useJUnitPlatform()
+    }
+
+    val generatedFilesFolder = "build${File.separator}generated"
+
+    tasks.withType<SourceTask>()
+        .matching { it is VerificationTask }
+        .configureEach {
+            exclude { generatedFilesFolder in it.file.absolutePath }
+        }
+
+    ktlint {
+        filter {
+            exclude { generatedFilesFolder in it.file.absolutePath }
+        }
+    }
+
+    tasks.withType<SpotBugsTask>().configureEach {
+        val sourcesToAnalyze = project.sourceSets.main.flatMap { main ->
+            project.sourceSets.test.map { test ->
+                listOf(main, test).map { it.toString() }
+            }
+        }
+        onlyAnalyze.set(sourcesToAnalyze)
     }
 
     publishOnCentral {

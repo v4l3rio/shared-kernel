@@ -13,9 +13,9 @@ public class Message {
      * @param type the type of the message
      * @param data the data of the message
      */
-    public Message(MessageType type, byte[] data) {
+    public Message(final MessageType type, final byte[] data) {
         this.type = type;
-        this.data = data;
+        this.data = data.clone();
     }
 
     /**
@@ -33,6 +33,6 @@ public class Message {
      * @return the data of the message
      */
     public byte[] getData() {
-        return data;
+        return data.clone();
     }
 }

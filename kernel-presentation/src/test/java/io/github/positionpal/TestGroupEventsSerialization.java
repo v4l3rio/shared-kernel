@@ -12,13 +12,15 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestGroupEventsSerialization {
+class TestGroupEventsSerialization {
+
+    private static final String GROUP_ID = "group123";
 
     private AvroSerializer avroSerializer;
     private User testUser;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         avroSerializer = new AvroSerializer();
         testUser = User.newBuilder()
                 .setId("randomId")
@@ -30,56 +32,48 @@ public class TestGroupEventsSerialization {
     }
 
     @Test
-    public void testSerializeAndDeserializeAddedMemberToGroup() throws IOException {
-        AddedMemberToGroup event = AddedMemberToGroup.newBuilder()
-                .setGroupId("group123")
+    void testSerializeAndDeserializeAddedMemberToGroup() throws IOException {
+        final AddedMemberToGroup event = AddedMemberToGroup.newBuilder()
+                .setGroupId(GROUP_ID)
                 .setAddedMember(testUser)
                 .build();
-
-        byte[] serializedData = avroSerializer.serializeAddedMemberToGroup(event);
-        AddedMemberToGroup deserializedEvent = avroSerializer.deserializeAddedMemberToGroup(serializedData);
-
+        final byte[] serializedData = avroSerializer.serializeAddedMemberToGroup(event);
+        final AddedMemberToGroup deserializedEvent = avroSerializer.deserializeAddedMemberToGroup(serializedData);
         assertEquals(event.getGroupId(), deserializedEvent.getGroupId());
         assertEquals(event.getAddedMember(), deserializedEvent.getAddedMember());
     }
 
     @Test
-    public void testSerializeAndDeserializeRemovedMemberToGroup() throws IOException {
-        RemovedMemberToGroup event = RemovedMemberToGroup.newBuilder()
-                .setGroupId("group123")
+    void testSerializeAndDeserializeRemovedMemberToGroup() throws IOException {
+        final RemovedMemberToGroup event = RemovedMemberToGroup.newBuilder()
+                .setGroupId(GROUP_ID)
                 .setRemovedMember(testUser)
                 .build();
-
-        byte[] serializedData = avroSerializer.serializeRemovedMemberToGroup(event);
-        RemovedMemberToGroup deserializedEvent = avroSerializer.deserializeRemovedMemberToGroup(serializedData);
-
+        final byte[] serializedData = avroSerializer.serializeRemovedMemberToGroup(event);
+        final RemovedMemberToGroup deserializedEvent = avroSerializer.deserializeRemovedMemberToGroup(serializedData);
         assertEquals(event.getGroupId(), deserializedEvent.getGroupId());
         assertEquals(event.getRemovedMember(), deserializedEvent.getRemovedMember());
     }
 
     @Test
-    public void testSerializeAndDeserializeGroupCreated() throws IOException {
-        GroupCreated event = GroupCreated.newBuilder()
-                .setGroupId("group123")
+    void testSerializeAndDeserializeGroupCreated() throws IOException {
+        final GroupCreated event = GroupCreated.newBuilder()
+                .setGroupId(GROUP_ID)
                 .setCreatedBy(testUser)
                 .build();
-
-        byte[] serializedData = avroSerializer.serializeGroupCreated(event);
-        GroupCreated deserializedEvent = avroSerializer.deserializeGroupCreated(serializedData);
-
+        final byte[] serializedData = avroSerializer.serializeGroupCreated(event);
+        final GroupCreated deserializedEvent = avroSerializer.deserializeGroupCreated(serializedData);
         assertEquals(event.getGroupId(), deserializedEvent.getGroupId());
         assertEquals(event.getCreatedBy(), deserializedEvent.getCreatedBy());
     }
 
     @Test
-    public void testSerializeAndDeserializeGroupDeleted() throws IOException {
-        GroupDeleted event = GroupDeleted.newBuilder()
-                .setGroupId("group123")
+    void testSerializeAndDeserializeGroupDeleted() throws IOException {
+        final GroupDeleted event = GroupDeleted.newBuilder()
+                .setGroupId(GROUP_ID)
                 .build();
-
-        byte[] serializedData = avroSerializer.serializeGroupDeleted(event);
-        GroupDeleted deserializedEvent = avroSerializer.deserializeGroupDeleted(serializedData);
-
+        final byte[] serializedData = avroSerializer.serializeGroupDeleted(event);
+        final GroupDeleted deserializedEvent = avroSerializer.deserializeGroupDeleted(serializedData);
         assertEquals(event.getGroupId(), deserializedEvent.getGroupId());
     }
 }

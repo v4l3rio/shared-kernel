@@ -5,24 +5,23 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-
-public class TestUserSerialization {
+class TestUserSerialization {
     @Test
-    public void testUserSerialization() {
-        User toSerialize = User.newBuilder()
+    void testUserSerialization() {
+        final User toSerialize = User.newBuilder()
                 .setId("random")
                 .setEmail("random@email.it")
                 .setName("Test")
                 .setRole("user")
                 .setSurname("User")
                 .build();
-
-        AvroSerializer serializer = new AvroSerializer();
+        final AvroSerializer serializer = new AvroSerializer();
         User deserializedObject = null;
         try {
-            byte[] serializedObject = serializer.serializeUser(toSerialize);
+            final byte[] serializedObject = serializer.serializeUser(toSerialize);
             deserializedObject = serializer.deserializeUser(serializedObject);
         } catch (IOException e) {
             fail();

@@ -1,6 +1,10 @@
 package io.github.positionpal;
 
-import com.positionpal.*;
+import com.positionpal.AddedMemberToGroup;
+import com.positionpal.GroupCreated;
+import com.positionpal.GroupDeleted;
+import com.positionpal.RemovedMemberToGroup;
+import com.positionpal.User;
 import org.apache.avro.Schema;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificDatumReader;
@@ -31,11 +35,12 @@ public class AvroSerializer implements EventSerializer {
      * @param schema the schema of the Avro object
      * @return a byte array representing the serialized object
      * @throws IOException if an I/O error occurs during serialization
+     * @param <T> the type of the Avro object
      */
-    private <T> byte[] serialize(T object, Schema schema) throws IOException {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        Encoder encoder = EncoderFactory.get().binaryEncoder(outputStream, null);
-        SpecificDatumWriter<T> writer = new SpecificDatumWriter<>(schema);
+    private <T> byte[] serialize(final T object, final Schema schema) throws IOException {
+        final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        final Encoder encoder = EncoderFactory.get().binaryEncoder(outputStream, null);
+        final SpecificDatumWriter<T> writer = new SpecificDatumWriter<>(schema);
         writer.write(object, encoder);
         encoder.flush();
         return outputStream.toByteArray();
@@ -48,11 +53,12 @@ public class AvroSerializer implements EventSerializer {
      * @param schema the schema of the Avro object
      * @return the deserialized Avro object
      * @throws IOException if an I/O error occurs during deserialization
+     * @param <T> the type of the Avro object
      */
-    private <T> T deserialize(byte[] data, Schema schema) throws IOException {
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(data);
-        Decoder decoder = DecoderFactory.get().binaryDecoder(inputStream, null);
-        SpecificDatumReader<T> reader = new SpecificDatumReader<>(schema);
+    private <T> T deserialize(final byte[] data, final Schema schema) throws IOException {
+        final ByteArrayInputStream inputStream = new ByteArrayInputStream(data);
+        final Decoder decoder = DecoderFactory.get().binaryDecoder(inputStream, null);
+        final SpecificDatumReader<T> reader = new SpecificDatumReader<>(schema);
         return reader.read(null, decoder);
     }
 
@@ -64,7 +70,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during serialization
      */
     @Override
-    public byte[] serializeUser(User user) throws IOException {
+    public byte[] serializeUser(final User user) throws IOException {
         return serialize(user, USER_SCHEMA);
     }
 
@@ -76,7 +82,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during deserialization
      */
     @Override
-    public User deserializeUser(byte[] data) throws IOException {
+    public User deserializeUser(final byte[] data) throws IOException {
         return deserialize(data, USER_SCHEMA);
     }
 
@@ -88,7 +94,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during serialization
      */
     @Override
-    public byte[] serializeAddedMemberToGroup(AddedMemberToGroup event) throws IOException {
+    public byte[] serializeAddedMemberToGroup(final AddedMemberToGroup event) throws IOException {
         return serialize(event, ADD_MEMBER_EVENT);
     }
 
@@ -100,7 +106,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during deserialization
      */
     @Override
-    public AddedMemberToGroup deserializeAddedMemberToGroup(byte[] data) throws IOException {
+    public AddedMemberToGroup deserializeAddedMemberToGroup(final byte[] data) throws IOException {
         return deserialize(data, ADD_MEMBER_EVENT);
     }
 
@@ -112,7 +118,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during serialization
      */
     @Override
-    public byte[] serializeRemovedMemberToGroup(RemovedMemberToGroup event) throws IOException {
+    public byte[] serializeRemovedMemberToGroup(final RemovedMemberToGroup event) throws IOException {
         return serialize(event, REMOVE_MEMBER_EVENT);
     }
 
@@ -124,7 +130,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during deserialization
      */
     @Override
-    public RemovedMemberToGroup deserializeRemovedMemberToGroup(byte[] data) throws IOException {
+    public RemovedMemberToGroup deserializeRemovedMemberToGroup(final byte[] data) throws IOException {
         return deserialize(data, REMOVE_MEMBER_EVENT);
     }
 
@@ -136,7 +142,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during serialization
      */
     @Override
-    public byte[] serializeGroupCreated(GroupCreated event) throws IOException {
+    public byte[] serializeGroupCreated(final GroupCreated event) throws IOException {
         return serialize(event, GROUP_CREATED_EVENT);
     }
 
@@ -148,7 +154,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during deserialization
      */
     @Override
-    public GroupCreated deserializeGroupCreated(byte[] data) throws IOException {
+    public GroupCreated deserializeGroupCreated(final byte[] data) throws IOException {
         return deserialize(data, GROUP_CREATED_EVENT);
     }
 
@@ -160,7 +166,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during serialization
      */
     @Override
-    public byte[] serializeGroupDeleted(GroupDeleted event) throws IOException {
+    public byte[] serializeGroupDeleted(final GroupDeleted event) throws IOException {
         return serialize(event, GROUP_DELETED_EVENT);
     }
 
@@ -172,7 +178,7 @@ public class AvroSerializer implements EventSerializer {
      * @throws IOException if an I/O error occurs during deserialization
      */
     @Override
-    public GroupDeleted deserializeGroupDeleted(byte[] data) throws IOException {
+    public GroupDeleted deserializeGroupDeleted(final byte[] data) throws IOException {
         return deserialize(data, GROUP_DELETED_EVENT);
     }
 }
