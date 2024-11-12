@@ -1,3 +1,9 @@
+## [0.5.0](https://github.com/position-pal/shared-kernel/compare/0.4.0...0.5.0) (2024-11-12)
+
+### Features
+
+* message implementation ([be40e9d](https://github.com/position-pal/shared-kernel/commit/be40e9d05227eb61285437b6f920cb47150cb20a))
+
 ## [0.4.0](https://github.com/position-pal/shared-kernel/compare/0.3.1...0.4.0) (2024-11-09)
 
 ### Features
