@@ -1,3 +1,26 @@
+## [0.6.0](https://github.com/position-pal/shared-kernel/compare/0.5.0...0.6.0) (2024-11-13)
+
+### Features
+
+* added domain elements and interfaces ([44b9eff](https://github.com/position-pal/shared-kernel/commit/44b9eff767fe4dda5318b0ab4345fa0cc9226f59))
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.115 ([#7](https://github.com/position-pal/shared-kernel/issues/7)) ([1f732cd](https://github.com/position-pal/shared-kernel/commit/1f732cdd6fb3228b6e8e6914e1b8bae9e0dfffe4))
+
+### Bug Fixes
+
+* solved ci problem with java 11 ([10af441](https://github.com/position-pal/shared-kernel/commit/10af44142b7f04ae9a4dbcb77165cfd6848fa808))
+
+### Build and continuous integration
+
+* do not fail javadoc generation because of linting warning ([e4b756e](https://github.com/position-pal/shared-kernel/commit/e4b756e566fc8a3fbad61ddc4413d2f9d09fa9ab))
+* test javadoc and sourceJar generation ([ed4eddf](https://github.com/position-pal/shared-kernel/commit/ed4eddfb3551b2f11f797135a1e4aad3821d4f76))
+
+### Refactoring
+
+* apply java qa plugin ([a3b1167](https://github.com/position-pal/shared-kernel/commit/a3b11674d5fd353372b148f93de8c56c817069ab))
+
 ## [0.5.0](https://github.com/position-pal/shared-kernel/compare/0.4.0...0.5.0) (2024-11-12)
 
 ### Features
