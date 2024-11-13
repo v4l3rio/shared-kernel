@@ -1,6 +1,5 @@
 package io.github.positionpal;
 
-
 import org.apache.avro.Schema;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificDatumReader;

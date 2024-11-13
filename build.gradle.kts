@@ -65,7 +65,7 @@ subprojects {
     val generatedFilesFolder = "build${File.separator}generated"
 
     tasks.withType<SourceTask>()
-        .matching { it is VerificationTask }
+        .matching { it is VerificationTask || it is Javadoc }
         .configureEach {
             exclude { generatedFilesFolder in it.file.absolutePath }
         }
@@ -83,6 +83,11 @@ subprojects {
             }
         }
         onlyAnalyze.set(sourcesToAnalyze)
+    }
+
+    tasks.javadoc {
+        // The check task already enforces well-formed Javadoc.
+        (options as? CoreJavadocOptions)?.addStringOption("Xdoclint:none", "-quiet")
     }
 
     publishOnCentral {
