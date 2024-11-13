@@ -1,5 +1,7 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 
+module:kernel-domain
+io.github.positionpal
 module:kernel-presentation
 io.github.positionpal
