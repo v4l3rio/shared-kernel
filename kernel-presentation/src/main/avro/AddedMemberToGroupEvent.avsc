@@ -1,9 +1,9 @@
 {
   "type": "record",
-  "name": "AddedMemberToGroup",
-  "namespace": "com.positionpal",
+  "name": "AddedMemberToGroupEvent",
+  "namespace": "io.github.positionpal",
   "fields": [
     {"name": "groupId", "type": "string"},
-    {"name":  "addedMember", "type": "User"}
+    {"name":  "addedMember", "type": "AvroUser"}
   ]
 }

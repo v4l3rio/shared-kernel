@@ -1,9 +1,9 @@
 {
   "type": "record",
-  "name": "GroupCreated",
-  "namespace": "com.positionpal",
+  "name": "GroupCreatedEvent",
+  "namespace": "io.github.positionpal",
   "fields": [
     {"name": "groupId", "type": "string"},
-    {"name": "createdBy", "type": "User"}
+    {"name": "createdBy", "type": "AvroUser"}
   ]
 }

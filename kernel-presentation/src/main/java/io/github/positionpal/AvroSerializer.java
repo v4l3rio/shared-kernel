@@ -1,10 +1,6 @@
 package io.github.positionpal;
 
-import com.positionpal.AddedMemberToGroup;
-import com.positionpal.GroupCreated;
-import com.positionpal.GroupDeleted;
-import com.positionpal.RemovedMemberToGroup;
-import com.positionpal.User;
+
 import org.apache.avro.Schema;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificDatumReader;
@@ -22,11 +18,11 @@ import java.io.IOException;
  */
 public class AvroSerializer implements EventSerializer {
 
-    private static final Schema USER_SCHEMA = User.getClassSchema();
-    private static final Schema ADD_MEMBER_EVENT = AddedMemberToGroup.getClassSchema();
-    private static final Schema REMOVE_MEMBER_EVENT = RemovedMemberToGroup.getClassSchema();
-    private static final Schema GROUP_CREATED_EVENT = GroupCreated.getClassSchema();
-    private static final Schema GROUP_DELETED_EVENT = GroupDeleted.getClassSchema();
+    private static final Schema USER_SCHEMA = AvroUser.getClassSchema();
+    private static final Schema ADD_MEMBER_EVENT = AddedMemberToGroupEvent.getClassSchema();
+    private static final Schema REMOVE_MEMBER_EVENT = RemovedMemberToGroupEvent.getClassSchema();
+    private static final Schema GROUP_CREATED_EVENT = GroupCreatedEvent.getClassSchema();
+    private static final Schema GROUP_DELETED_EVENT = GroupDeletedEvent.getClassSchema();
 
     /**
      * Generic method to serialize an Avro object into a byte array.
@@ -71,7 +67,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public byte[] serializeUser(final User user) throws IOException {
-        return serialize(user, USER_SCHEMA);
+        return serialize(AvroConverter.toAvroUser(user), USER_SCHEMA);
     }
 
     /**
@@ -83,7 +79,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public User deserializeUser(final byte[] data) throws IOException {
-        return deserialize(data, USER_SCHEMA);
+        return AvroConverter.toUser(deserialize(data, USER_SCHEMA));
     }
 
     /**
@@ -95,7 +91,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public byte[] serializeAddedMemberToGroup(final AddedMemberToGroup event) throws IOException {
-        return serialize(event, ADD_MEMBER_EVENT);
+        return serialize(AvroConverter.toAvroAddedMemberToGroup(event), ADD_MEMBER_EVENT);
     }
 
     /**
@@ -107,7 +103,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public AddedMemberToGroup deserializeAddedMemberToGroup(final byte[] data) throws IOException {
-        return deserialize(data, ADD_MEMBER_EVENT);
+        return AvroConverter.toAddedMemberToGroup(deserialize(data, ADD_MEMBER_EVENT));
     }
 
     /**
@@ -119,7 +115,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public byte[] serializeRemovedMemberToGroup(final RemovedMemberToGroup event) throws IOException {
-        return serialize(event, REMOVE_MEMBER_EVENT);
+        return serialize(AvroConverter.toAvroRemovedMemberToGroup(event), REMOVE_MEMBER_EVENT);
     }
 
     /**
@@ -131,7 +127,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public RemovedMemberToGroup deserializeRemovedMemberToGroup(final byte[] data) throws IOException {
-        return deserialize(data, REMOVE_MEMBER_EVENT);
+        return AvroConverter.toRemovedMemberToGroup(deserialize(data, REMOVE_MEMBER_EVENT));
     }
 
     /**
@@ -143,7 +139,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public byte[] serializeGroupCreated(final GroupCreated event) throws IOException {
-        return serialize(event, GROUP_CREATED_EVENT);
+        return serialize(AvroConverter.toAvroGroupCreated(event), GROUP_CREATED_EVENT);
     }
 
     /**
@@ -155,7 +151,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public GroupCreated deserializeGroupCreated(final byte[] data) throws IOException {
-        return deserialize(data, GROUP_CREATED_EVENT);
+        return AvroConverter.toGroupCreated(deserialize(data, GROUP_CREATED_EVENT));
     }
 
     /**
@@ -167,7 +163,7 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public byte[] serializeGroupDeleted(final GroupDeleted event) throws IOException {
-        return serialize(event, GROUP_DELETED_EVENT);
+        return serialize(AvroConverter.toAvroGroupDeleted(event), GROUP_DELETED_EVENT);
     }
 
     /**
@@ -179,6 +175,6 @@ public class AvroSerializer implements EventSerializer {
      */
     @Override
     public GroupDeleted deserializeGroupDeleted(final byte[] data) throws IOException {
-        return deserialize(data, GROUP_DELETED_EVENT);
+        return AvroConverter.toGroupDeleted(deserialize(data, GROUP_DELETED_EVENT));
     }
 }

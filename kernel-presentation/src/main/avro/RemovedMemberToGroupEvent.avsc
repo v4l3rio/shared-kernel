@@ -1,9 +1,9 @@
 {
   "type": "record",
-  "name": "RemovedMemberToGroup",
-  "namespace": "com.positionpal",
+  "name": "RemovedMemberToGroupEvent",
+  "namespace": "io.github.positionpal",
   "fields": [
     {"name": "groupId", "type": "string"},
-    {"name":  "removedMember", "type": "User"}
+    {"name":  "removedMember", "type": "AvroUser"}
   ]
 }

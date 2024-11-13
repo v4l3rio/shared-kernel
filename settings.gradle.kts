@@ -25,3 +25,4 @@ gitHooks {
     }
     createHooks(overwriteExisting = true)
 }
+include("kernel-domain")

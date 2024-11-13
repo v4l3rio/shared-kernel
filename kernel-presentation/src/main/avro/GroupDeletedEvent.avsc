@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "GroupDeleted",
-  "namespace": "com.positionpal",
+  "name": "GroupDeletedEvent",
+  "namespace": "io.github.positionpal",
   "fields": [
     {"name": "groupId", "type": "string"}
   ]
