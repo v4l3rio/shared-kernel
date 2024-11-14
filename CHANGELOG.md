@@ -1,3 +1,10 @@
+## [0.7.0](https://github.com/position-pal/shared-kernel/compare/0.6.0...0.7.0) (2024-11-14)
+
+### Features
+
+* **domain:** add notifications commands and entities ([4bac0e8](https://github.com/position-pal/shared-kernel/commit/4bac0e8ceba3e98fa48812406da50cd0411ef577))
+* **presentation:** add notification schemas and de/serializers ([eb5d6c6](https://github.com/position-pal/shared-kernel/commit/eb5d6c628bd24e1da82d0a9afbc126896ebcba87))
+
 ## [0.6.0](https://github.com/position-pal/shared-kernel/compare/0.5.0...0.6.0) (2024-11-13)
 
 ### Features
