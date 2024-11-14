@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "AvroNotificationMessage",
+  "namespace": "io.github.positionpal",
+  "fields": [
+    {"name": "title", "type": "string"},
+    {"name": "body", "type": "string"}
+  ]
+}

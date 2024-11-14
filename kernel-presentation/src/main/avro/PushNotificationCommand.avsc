@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "name": "AvroPushNotificationCommand",
+  "namespace": "io.github.positionpal",
+  "fields": [
+    {"name": "recipient", "type": "AvroGroupId"},
+    {"name": "sender", "type": "AvroUserId"},
+    {"name": "message", "type": "AvroNotificationMessage"}
+  ]
+}

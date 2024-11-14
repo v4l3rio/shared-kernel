@@ -1,17 +1,52 @@
 package io.github.positionpal;
+
+import io.github.positionpal.commands.PushNotificationCommand;
+import io.github.positionpal.entities.GroupId;
+import io.github.positionpal.entities.NotificationMessage;
+import io.github.positionpal.entities.UserId;
+
 import java.io.IOException;
 
 /**
- * Interface for serializing and deserializing User and Group-related events using Avro.
- * Provides methods to convert User, Group, and Group-related event objects
- * (e.g., adding/removing members, creating/deleting groups) to byte arrays and back.
+ * Interface for serializing and deserializing commands and events to byte arrays and back using Avro.
  * Implementations of this interface allow for efficient, binary serialization for transport or storage.
  */
 public interface EventSerializer {
 
     /**
+     * Deserializes a byte array into a {@link UserId} object.
+     * @param data the byte array to deserialize
+     * @return the deserialized {@link UserId} object
+     * @throws IOException if an I/O error occurs during deserialization
+     */
+    UserId deserializeUserId(byte[] data) throws IOException;
+
+    /**
+     * Serializes a {@link UserId} object into a byte array.
+     * @param userId the {@link UserId} object to serialize
+     * @return a byte array representing the serialized {@link UserId} object
+     * @throws IOException if an I/O error occurs during serialization
+     */
+    byte[] serializeUserId(UserId userId) throws IOException;
+
+    /**
+     * Deserializes a byte array into a {@link GroupId} object.
+     * @param data the byte array to deserialize
+     * @return the deserialized {@link GroupId} object
+     * @throws IOException if an I/O error occurs during deserialization
+     */
+    GroupId deserializeGroupId(byte[] data) throws IOException;
+
+    /**
+     * Serializes a {@link GroupId} object into a byte array.
+     * @param groupId the {@link GroupId} object to serialize
+     * @return a byte array representing the serialized {@link GroupId} object
+     * @throws IOException if an I/O error occurs during serialization
+     */
+    byte[] serializeGroupId(GroupId groupId) throws IOException;
+
+    /**
      * Serializes a User object into a byte array.
-     *
      * @param user the User object to serialize
      * @return a byte array representing the serialized User object
      * @throws IOException if an I/O error occurs during serialization
@@ -20,7 +55,6 @@ public interface EventSerializer {
 
     /**
      * Deserializes a byte array into a User object.
-     *
      * @param data the byte array to deserialize
      * @return the deserialized User object
      * @throws IOException if an I/O error occurs during deserialization
@@ -29,7 +63,6 @@ public interface EventSerializer {
 
     /**
      * Serializes an AddedMemberToGroup event object into a byte array.
-     *
      * @param event the AddedMemberToGroup event object to serialize
      * @return a byte array representing the serialized AddedMemberToGroup event
      * @throws IOException if an I/O error occurs during serialization
@@ -38,7 +71,6 @@ public interface EventSerializer {
 
     /**
      * Deserializes a byte array into an AddedMemberToGroup event object.
-     *
      * @param data the byte array to deserialize
      * @return the deserialized AddedMemberToGroup event object
      * @throws IOException if an I/O error occurs during deserialization
@@ -47,7 +79,6 @@ public interface EventSerializer {
 
     /**
      * Serializes a RemovedMemberToGroup event object into a byte array.
-     *
      * @param event the RemovedMemberToGroup event object to serialize
      * @return a byte array representing the serialized RemovedMemberToGroup event
      * @throws IOException if an I/O error occurs during serialization
@@ -56,7 +87,6 @@ public interface EventSerializer {
 
     /**
      * Deserializes a byte array into a RemovedMemberToGroup event object.
-     *
      * @param data the byte array to deserialize
      * @return the deserialized RemovedMemberToGroup event object
      * @throws IOException if an I/O error occurs during deserialization
@@ -65,7 +95,6 @@ public interface EventSerializer {
 
     /**
      * Serializes a GroupCreated event object into a byte array.
-     *
      * @param event the GroupCreated event object to serialize
      * @return a byte array representing the serialized GroupCreated event
      * @throws IOException if an I/O error occurs during serialization
@@ -74,7 +103,6 @@ public interface EventSerializer {
 
     /**
      * Deserializes a byte array into a GroupCreated event object.
-     *
      * @param data the byte array to deserialize
      * @return the deserialized GroupCreated event object
      * @throws IOException if an I/O error occurs during deserialization
@@ -83,7 +111,6 @@ public interface EventSerializer {
 
     /**
      * Serializes a GroupDeleted event object into a byte array.
-     *
      * @param event the GroupDeleted event object to serialize
      * @return a byte array representing the serialized GroupDeleted event
      * @throws IOException if an I/O error occurs during serialization
@@ -92,10 +119,41 @@ public interface EventSerializer {
 
     /**
      * Deserializes a byte array into a GroupDeleted event object.
-     *
      * @param data the byte array to deserialize
      * @return the deserialized GroupDeleted event object
      * @throws IOException if an I/O error occurs during deserialization
      */
     GroupDeleted deserializeGroupDeleted(byte[] data) throws IOException;
+
+    /**
+     * Deserializes a byte array into a {@link PushNotificationCommand} object.
+     * @param data the byte array to deserialize
+     * @return the deserialized {@link PushNotificationCommand} object
+     * @throws IOException if an I/O error occurs during deserialization
+     */
+    PushNotificationCommand deserializePushNotificationCommand(byte[] data) throws IOException;
+
+    /**
+     * Serializes a {@link PushNotificationCommand} object into a byte array.
+     * @param command the {@link PushNotificationCommand} object to serialize
+     * @return a byte array representing the serialized {@link PushNotificationCommand} object
+     * @throws IOException if an I/O error occurs during serialization
+     */
+    byte[] serializePushNotificationCommand(PushNotificationCommand command) throws IOException;
+
+    /**
+     * Deserializes a byte array into a {@link NotificationMessage} object.
+     * @param data the byte array to deserialize
+     * @return the deserialized {@link NotificationMessage} object
+     * @throws IOException if an I/O error occurs during deserialization
+     */
+    NotificationMessage deserializeNotificationMessage(byte[] data) throws IOException;
+
+    /**
+     * Serializes a {@link NotificationMessage} object into a byte array.
+     * @param message the {@link NotificationMessage} object to serialize
+     * @return a byte array representing the serialized {@link NotificationMessage} object
+     * @throws IOException if an I/O error occurs during serialization
+     */
+    byte[] serializeNotificationMessage(NotificationMessage message) throws IOException;
 }

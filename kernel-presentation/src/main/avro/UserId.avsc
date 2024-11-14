@@ -1,0 +1,8 @@
+{
+  "type": "record",
+  "name": "AvroUserId",
+  "namespace": "io.github.positionpal",
+  "fields": [
+    {"name": "username", "type": "string"}
+  ]
+}
