@@ -41,7 +41,7 @@
 <a class="library-name--link" href="../../../index.html">
                             shared-kernel
                     </a>            </div>
-            <div class="library-version">0.1.0-archeo+ed4eddf
+            <div class="library-version">0.1.0-archeo+eb5d6c6
             </div>
         </div>
         <div class="filter-section" id="filter-section">
@@ -62,7 +62,7 @@
   <div class="breadcrumbs"><a href="../../index.html">kernel-presentation</a><span class="delimiter">/</span><a href="../index.html">io.github.positionpal</a><span class="delimiter">/</span><span class="current">EventSerializer</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Event</span><wbr><span><span>Serializer</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">EventSerializer</a></div><p class="paragraph">Interface for serializing and deserializing User and Group-related events using Avro. Provides methods to convert User, Group, and Group-related event objects (e.g., adding/removing members, creating/deleting groups) to byte arrays and back. Implementations of this interface allow for efficient, binary serialization for transport or storage.</p><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-avro-serializer/index.html">AvroSerializer</a></div></span></div><div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">EventSerializer</a></div><p class="paragraph">Interface for serializing and deserializing commands and events to byte arrays and back using Avro. Implementations of this interface allow for efficient, binary serialization for transport or storage.</p><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-avro-serializer/index.html">AvroSerializer</a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -114,6 +114,51 @@
               </div>
             </div>
           </div>
+<a data-name="-440841323%2FFunctions%2F-1453325392" anchor-label="deserializeGroupId" id="-440841323%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deserialize-group-id.html"><span>deserialize</span><wbr><span>Group</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-440841323%2FFunctions%2F-1453325392"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="deserialize-group-id.html"><span class="token function">deserializeGroupId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal.entities/-group-id/index.html">GroupId</a></div><div class="brief ">Deserializes a byte array into a <a href="../../../kernel-domain/io.github.positionpal.entities/-group-id/index.html">GroupId</a> object.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="764385459%2FFunctions%2F-1453325392" anchor-label="deserializeNotificationMessage" id="764385459%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deserialize-notification-message.html"><span>deserialize</span><wbr><span>Notification</span><wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="764385459%2FFunctions%2F-1453325392"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="deserialize-notification-message.html"><span class="token function">deserializeNotificationMessage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal.entities/-notification-message/index.html">NotificationMessage</a></div><div class="brief ">Deserializes a byte array into a <a href="../../../kernel-domain/io.github.positionpal.entities/-notification-message/index.html">NotificationMessage</a> object.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-195771479%2FFunctions%2F-1453325392" anchor-label="deserializePushNotificationCommand" id="-195771479%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deserialize-push-notification-command.html"><span>deserialize</span><wbr><span>Push</span><wbr><span>Notification</span><wbr><span><span>Command</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-195771479%2FFunctions%2F-1453325392"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="deserialize-push-notification-command.html"><span class="token function">deserializePushNotificationCommand</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal.commands/-push-notification-command/index.html">PushNotificationCommand</a></div><div class="brief ">Deserializes a byte array into a <a href="../../../kernel-domain/io.github.positionpal.commands/-push-notification-command/index.html">PushNotificationCommand</a> object.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1117312845%2FFunctions%2F-1453325392" anchor-label="deserializeRemovedMemberToGroup" id="1117312845%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
           <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
             <div class="main-subrow keyValue ">
@@ -140,6 +185,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="deserialize-user.html"><span class="token function">deserializeUser</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal/-user/index.html">User</a></div><div class="brief ">Deserializes a byte array into a User object.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1754080047%2FFunctions%2F-1453325392" anchor-label="deserializeUserId" id="-1754080047%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deserialize-user-id.html"><span>deserialize</span><wbr><span>User</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1754080047%2FFunctions%2F-1453325392"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="deserialize-user-id.html"><span class="token function">deserializeUserId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">data<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal.entities/-user-id/index.html">UserId</a></div><div class="brief ">Deserializes a byte array into a <a href="../../../kernel-domain/io.github.positionpal.entities/-user-id/index.html">UserId</a> object.</div></div></div>
                 </div>
               </div>
             </div>
@@ -189,6 +249,51 @@
               </div>
             </div>
           </div>
+<a data-name="-1956649484%2FFunctions%2F-1453325392" anchor-label="serializeGroupId" id="-1956649484%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="serialize-group-id.html"><span>serialize</span><wbr><span>Group</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1956649484%2FFunctions%2F-1453325392"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="serialize-group-id.html"><span class="token function">serializeGroupId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">groupId<span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal.entities/-group-id/index.html">GroupId</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></div><div class="brief ">Serializes a <a href="../../../kernel-domain/io.github.positionpal.entities/-group-id/index.html">GroupId</a> object into a byte array.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-658295248%2FFunctions%2F-1453325392" anchor-label="serializeNotificationMessage" id="-658295248%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="serialize-notification-message.html"><span>serialize</span><wbr><span>Notification</span><wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-658295248%2FFunctions%2F-1453325392"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="serialize-notification-message.html"><span class="token function">serializeNotificationMessage</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">message<span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal.entities/-notification-message/index.html">NotificationMessage</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></div><div class="brief ">Serializes a <a href="../../../kernel-domain/io.github.positionpal.entities/-notification-message/index.html">NotificationMessage</a> object into a byte array.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="308363381%2FFunctions%2F-1453325392" anchor-label="serializePushNotificationCommand" id="308363381%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="serialize-push-notification-command.html"><span>serialize</span><wbr><span>Push</span><wbr><span>Notification</span><wbr><span><span>Command</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="308363381%2FFunctions%2F-1453325392"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="serialize-push-notification-command.html"><span class="token function">serializePushNotificationCommand</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">command<span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal.commands/-push-notification-command/index.html">PushNotificationCommand</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></div><div class="brief ">Serializes a <a href="../../../kernel-domain/io.github.positionpal.commands/-push-notification-command/index.html">PushNotificationCommand</a> object into a byte array.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1323963949%2FFunctions%2F-1453325392" anchor-label="serializeRemovedMemberToGroup" id="1323963949%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
           <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
             <div class="main-subrow keyValue ">
@@ -215,6 +320,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="serialize-user.html"><span class="token function">serializeUser</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">user<span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal/-user/index.html">User</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></div><div class="brief ">Serializes a User object into a byte array.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1060503476%2FFunctions%2F-1453325392" anchor-label="serializeUserId" id="1060503476%2FFunctions%2F-1453325392" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main"></a>
+          <div class="table-row" data-filterable-current=":kernel-presentation:dokkaHtmlPartial/main" data-filterable-set=":kernel-presentation:dokkaHtmlPartial/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="serialize-user-id.html"><span>serialize</span><wbr><span>User</span><wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1060503476%2FFunctions%2F-1453325392"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":kernel-presentation:dokkaHtmlPartial/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="serialize-user-id.html"><span class="token function">serializeUserId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">userId<span class="token operator">: </span><a href="../../../kernel-domain/io.github.positionpal.entities/-user-id/index.html">UserId</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte/index.html">Byte</a><span class="token operator">&gt;</span></div><div class="brief ">Serializes a <a href="../../../kernel-domain/io.github.positionpal.entities/-user-id/index.html">UserId</a> object into a byte array.</div></div></div>
                 </div>
               </div>
             </div>

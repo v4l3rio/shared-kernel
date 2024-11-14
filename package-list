@@ -3,5 +3,7 @@ $dokka.linkExtension:html
 
 module:kernel-domain
 io.github.positionpal
+io.github.positionpal.commands
+io.github.positionpal.entities
 module:kernel-presentation
 io.github.positionpal
