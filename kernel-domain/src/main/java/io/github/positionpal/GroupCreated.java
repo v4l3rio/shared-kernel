@@ -3,7 +3,7 @@ package io.github.positionpal;
 /**
  * Interface representing an event where a group is created.
  */
-public interface GroupCreated {
+public interface GroupCreated extends Event {
 
     /**
      * Factory method to create an instance of GroupCreated.

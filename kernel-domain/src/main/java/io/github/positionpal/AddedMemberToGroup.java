@@ -3,7 +3,7 @@ package io.github.positionpal;
 /**
  * Interface representing an event where a member is added to a group.
  */
-public interface AddedMemberToGroup {
+public interface AddedMemberToGroup extends Event {
 
     /**
      * Factory method to create an instance of AddedMemberToGroup.

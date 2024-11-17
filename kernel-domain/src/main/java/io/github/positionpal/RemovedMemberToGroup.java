@@ -3,7 +3,7 @@ package io.github.positionpal;
 /**
  * Interface representing an event where a member is removed from a group.
  */
-public interface RemovedMemberToGroup {
+public interface RemovedMemberToGroup extends Event {
 
     /**
      * Factory method to create an instance of RemovedMemberToGroup.

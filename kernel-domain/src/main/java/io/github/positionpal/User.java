@@ -3,7 +3,7 @@ package io.github.positionpal;
 /**
  * Interface representing a user.
  */
-public interface User {
+public interface User extends Event {
 
     /**
      * Factory method to create an instance of User.

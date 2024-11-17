@@ -3,7 +3,7 @@ package io.github.positionpal;
 /**
  * Interface representing an event where a group is deleted.
  */
-public interface GroupDeleted {
+public interface GroupDeleted extends Event {
 
     /**
      * Factory method to create an instance of GroupDeleted.
