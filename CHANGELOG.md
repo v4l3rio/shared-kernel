@@ -1,3 +1,9 @@
+## [0.8.0](https://github.com/position-pal/shared-kernel/compare/0.7.0...0.8.0) (2024-11-17)
+
+### Features
+
+* create two distinct commands `GroupWisePushNotification` and `CoMembersPushNotification` for notifications ([1e2829a](https://github.com/position-pal/shared-kernel/commit/1e2829a053e057e50d0bd026860966543fe4dc36))
+
 ## [0.7.0](https://github.com/position-pal/shared-kernel/compare/0.6.0...0.7.0) (2024-11-14)
 
 ### Features
