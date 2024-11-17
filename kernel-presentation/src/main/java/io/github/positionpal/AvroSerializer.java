@@ -1,6 +1,7 @@
 package io.github.positionpal;
 
-import io.github.positionpal.commands.PushNotificationCommand;
+import io.github.positionpal.commands.CoMembersPushNotification;
+import io.github.positionpal.commands.GroupWisePushNotification;
 import io.github.positionpal.entities.GroupId;
 import io.github.positionpal.entities.NotificationMessage;
 import io.github.positionpal.entities.UserId;
@@ -29,7 +30,8 @@ public final class AvroSerializer implements EventSerializer {
     private static final Schema GROUP_CREATED_EVENT = GroupCreatedEvent.getClassSchema();
     private static final Schema GROUP_DELETED_EVENT = GroupDeletedEvent.getClassSchema();
     private static final Schema NOTIFICATION_MESSAGE = AvroNotificationMessage.getClassSchema();
-    private static final Schema PUSH_NOTIFICATION_COMMAND = AvroPushNotificationCommand.getClassSchema();
+    private static final Schema GROUP_WISE_PUSH_NOTIFICATION = AvroGroupWisePushNotification.getClassSchema();
+    private static final Schema CO_MEMBERS_PUSH_NOTIFICATION = AvroCoMembersPushNotification.getClassSchema();
 
     /**
      * Generic method to serialize an Avro object into a byte array.
@@ -134,13 +136,23 @@ public final class AvroSerializer implements EventSerializer {
     }
 
     @Override
-    public byte[] serializePushNotificationCommand(final PushNotificationCommand command) throws IOException {
-        return serialize(AvroConverter.toAvroPushNotificationCommand(command), PUSH_NOTIFICATION_COMMAND);
+    public byte[] serializeGroupWiseNotification(final GroupWisePushNotification command) throws IOException {
+        return serialize(AvroConverter.toAvroGroupWisePushNotification(command), GROUP_WISE_PUSH_NOTIFICATION);
     }
 
     @Override
-    public PushNotificationCommand deserializePushNotificationCommand(final byte[] data) throws IOException {
-        return AvroConverter.toPushNotificationCommand(deserialize(data, PUSH_NOTIFICATION_COMMAND));
+    public GroupWisePushNotification deserializeGroupWiseNotification(final byte[] data) throws IOException {
+        return AvroConverter.toGroupWisePushNotification(deserialize(data, GROUP_WISE_PUSH_NOTIFICATION));
+    }
+
+    @Override
+    public CoMembersPushNotification deserializeCoMembersNotification(final byte[] data) throws IOException {
+        return AvroConverter.toCoMembersPushNotification(deserialize(data, CO_MEMBERS_PUSH_NOTIFICATION));
+    }
+
+    @Override
+    public byte[] serializeCoMembersNotification(final CoMembersPushNotification command) throws IOException {
+        return serialize(AvroConverter.toAvroCoMembersPushNotification(command), CO_MEMBERS_PUSH_NOTIFICATION);
     }
 
     @Override

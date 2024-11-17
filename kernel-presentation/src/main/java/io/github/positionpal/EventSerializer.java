@@ -1,6 +1,7 @@
 package io.github.positionpal;
 
-import io.github.positionpal.commands.PushNotificationCommand;
+import io.github.positionpal.commands.CoMembersPushNotification;
+import io.github.positionpal.commands.GroupWisePushNotification;
 import io.github.positionpal.entities.GroupId;
 import io.github.positionpal.entities.NotificationMessage;
 import io.github.positionpal.entities.UserId;
@@ -126,20 +127,36 @@ public interface EventSerializer {
     GroupDeleted deserializeGroupDeleted(byte[] data) throws IOException;
 
     /**
-     * Deserializes a byte array into a {@link PushNotificationCommand} object.
+     * Deserializes a byte array into a {@link GroupWisePushNotification} object.
      * @param data the byte array to deserialize
-     * @return the deserialized {@link PushNotificationCommand} object
+     * @return the deserialized {@link GroupWisePushNotification} object
      * @throws IOException if an I/O error occurs during deserialization
      */
-    PushNotificationCommand deserializePushNotificationCommand(byte[] data) throws IOException;
+    GroupWisePushNotification deserializeGroupWiseNotification(byte[] data) throws IOException;
 
     /**
-     * Serializes a {@link PushNotificationCommand} object into a byte array.
-     * @param command the {@link PushNotificationCommand} object to serialize
-     * @return a byte array representing the serialized {@link PushNotificationCommand} object
+     * Serializes a {@link GroupWisePushNotification} object into a byte array.
+     * @param command the {@link GroupWisePushNotification} object to serialize
+     * @return a byte array representing the serialized {@link GroupWisePushNotification} object
      * @throws IOException if an I/O error occurs during serialization
      */
-    byte[] serializePushNotificationCommand(PushNotificationCommand command) throws IOException;
+    byte[] serializeGroupWiseNotification(GroupWisePushNotification command) throws IOException;
+
+    /**
+     * Deserializes a byte array into a {@link CoMembersPushNotification} object.
+     * @param data the byte array to deserialize
+     * @return the deserialized {@link CoMembersPushNotification} object
+     * @throws IOException if an I/O error occurs during deserialization
+     */
+    CoMembersPushNotification deserializeCoMembersNotification(byte[] data) throws IOException;
+
+    /**
+     * Serializes a {@link CoMembersPushNotification} object into a byte array.
+     * @param command the {@link CoMembersPushNotification} object to serialize
+     * @return a byte array representing the serialized {@link CoMembersPushNotification} object
+     * @throws IOException if an I/O error occurs during serialization
+     */
+    byte[] serializeCoMembersNotification(CoMembersPushNotification command) throws IOException;
 
     /**
      * Deserializes a byte array into a {@link NotificationMessage} object.

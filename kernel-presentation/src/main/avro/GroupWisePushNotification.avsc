@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "name": "AvroPushNotificationCommand",
+  "name": "AvroGroupWisePushNotification",
   "namespace": "io.github.positionpal",
   "fields": [
     {"name": "recipient", "type": "AvroGroupId"},

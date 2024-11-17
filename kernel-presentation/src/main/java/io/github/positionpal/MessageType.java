@@ -32,5 +32,15 @@ public enum MessageType {
     /**
      * Message type for when a member is removed from a group.
      */
-    MEMBER_REMOVED
+    MEMBER_REMOVED,
+
+    /**
+     * Message type for a {@link io.github.positionpal.commands.GroupWisePushNotification} command.
+     */
+    GROUP_WISE_NOTIFICATION,
+
+    /**
+     * Message type for a {@link io.github.positionpal.commands.CoMembersPushNotification} command.
+     */
+    CO_MEMBERS_NOTIFICATION
 }

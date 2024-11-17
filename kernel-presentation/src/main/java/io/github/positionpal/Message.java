@@ -4,6 +4,7 @@ package io.github.positionpal;
  * Represents a message with a specific type and associated data.
  */
 public class Message {
+
     private final MessageType type;
     private final byte[] data;
 
