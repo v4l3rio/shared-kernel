@@ -1,3 +1,9 @@
+## [0.9.0](https://github.com/position-pal/shared-kernel/compare/0.8.0...0.9.0) (2024-11-17)
+
+### Features
+
+* added event interface ([734f113](https://github.com/position-pal/shared-kernel/commit/734f113cf3a5990c68da9a6677760f3167547633))
+
 ## [0.8.0](https://github.com/position-pal/shared-kernel/compare/0.7.0...0.8.0) (2024-11-17)
 
 ### Features
