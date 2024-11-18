@@ -1,3 +1,13 @@
+## [0.9.1](https://github.com/position-pal/shared-kernel/compare/0.9.0...0.9.1) (2024-11-18)
+
+### Bug Fixes
+
+* moved MessageType to the domain, and removed Message no longer used ([888b15a](https://github.com/position-pal/shared-kernel/commit/888b15a86b102812d889e5120763c8a82d9f3b35))
+
+### General maintenance
+
+* removed unused MessageType ([dc829e2](https://github.com/position-pal/shared-kernel/commit/dc829e2dc6e9551a206dbe104661363d6118bc84))
+
 ## [0.9.0](https://github.com/position-pal/shared-kernel/compare/0.8.0...0.9.0) (2024-11-17)
 
 ### Features
