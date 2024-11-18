@@ -5,16 +5,6 @@ package io.github.positionpal;
  */
 public enum MessageType {
     /**
-     * Message type for when a user is created.
-     */
-    USER_CREATED,
-
-    /**
-     * Message type for when a user is deleted.
-     */
-    USER_DELETED,
-
-    /**
      * Message type for when a group is created.
      */
     GROUP_CREATED,
