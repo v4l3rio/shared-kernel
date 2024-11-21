@@ -1,3 +1,9 @@
+## [0.10.0](https://github.com/position-pal/shared-kernel/compare/0.9.1...0.10.0) (2024-11-21)
+
+### Features
+
+* **domain:** add CommandType enum and Command marker interface to represents commands ([e8926ad](https://github.com/position-pal/shared-kernel/commit/e8926ad887706bf6e626f1a2fd19f4d60d76ab89))
+
 ## [0.9.1](https://github.com/position-pal/shared-kernel/compare/0.9.0...0.9.1) (2024-11-18)
 
 ### Bug Fixes
