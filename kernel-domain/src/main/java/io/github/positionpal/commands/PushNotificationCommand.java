@@ -6,7 +6,7 @@ import io.github.positionpal.entities.UserId;
 /**
  * Interface representing a push notification command.
  */
-public interface PushNotificationCommand {
+public interface PushNotificationCommand extends Command {
 
     /**
      * @return the {@link UserId} sending the notification.

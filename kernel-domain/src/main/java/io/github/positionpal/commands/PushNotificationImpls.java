@@ -8,11 +8,20 @@ record GroupWisePushNotificationImpl(
     GroupId recipient,
     UserId sender,
     NotificationMessage message
-) implements GroupWisePushNotification { }
-
+) implements GroupWisePushNotification {
+    @Override
+    public CommandType type() {
+        return CommandType.GROUP_WISE_NOTIFICATION;
+    }
+}
 
 record CoMembersPushNotificationImpl(
     UserId referenceUser,
     UserId sender,
     NotificationMessage message
-) implements CoMembersPushNotification { }
+) implements CoMembersPushNotification {
+    @Override
+    public CommandType type() {
+        return CommandType.CO_MEMBERS_NOTIFICATION;
+    }
+}
