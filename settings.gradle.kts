@@ -1,6 +1,6 @@
 plugins {
     id("org.danilopianini.gradle-pre-commit-git-hooks") version "2.0.15"
-    id("com.gradle.develocity") version "3.18.1"
+    id("com.gradle.develocity") version "3.18.2"
 }
 
 rootProject.name = "shared-kernel"
