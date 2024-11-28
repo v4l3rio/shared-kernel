@@ -1,3 +1,12 @@
+## [0.10.1](https://github.com/position-pal/shared-kernel/compare/0.10.0...0.10.1) (2024-11-28)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.1.0 ([#14](https://github.com/position-pal/shared-kernel/issues/14)) ([cc1c580](https://github.com/position-pal/shared-kernel/commit/cc1c58070d2ee4ca39bd7e667729276e406f9db0))
+* **deps:** update plugin com.gradle.develocity to v3.18.2 ([#10](https://github.com/position-pal/shared-kernel/issues/10)) ([cea69a1](https://github.com/position-pal/shared-kernel/commit/cea69a15c6a728113ecc1e6158303f038b84c4b8))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.15 ([#11](https://github.com/position-pal/shared-kernel/issues/11)) ([764eb22](https://github.com/position-pal/shared-kernel/commit/764eb2264946e7bdae74a02240568eff4b428322))
+* **deps:** update plugin publish to v5.1.11 ([#12](https://github.com/position-pal/shared-kernel/issues/12)) ([212016f](https://github.com/position-pal/shared-kernel/commit/212016fd670ced416ae510f2111cbcc459b261d7))
+
 ## [0.10.0](https://github.com/position-pal/shared-kernel/compare/0.9.1...0.10.0) (2024-11-21)
 
 ### Features
